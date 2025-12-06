@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import { useEffect, useRef, useState } from "react"
 import { searchPokemon } from "../../store/pokemonSlice"
 import clsx from "clsx";
-import style from './Detail.module.css'
+import style from './detail.module.css'
 import searchStyle from '../../components/SearchBar/searchBar.module.css'
 
 const typeColors: { [key: string]: string } = {
