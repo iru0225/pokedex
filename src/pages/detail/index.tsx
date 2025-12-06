@@ -57,8 +57,6 @@ const Detail = () => {
     return () => window.removeEventListener('resize', updateSize)
   }, [selectedPokemon])
 
-  console.log(selectedPokemon)
-
   const convertSize = (data: number) => data/10
 
   return(
@@ -71,13 +69,7 @@ const Detail = () => {
       </button>
       {selectedPokemon ? (
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'auto 1fr',
-            gap: '2rem',
-            margin: '0 auto',
-            width: '95%'
-          }}
+          className={style['container']}
         >
           <div className={clsx("flex justify-center flex-col items-center")}>
             <h1 style={{
@@ -100,7 +92,7 @@ const Detail = () => {
               </div>
               <img
                 ref={imageRef}
-                style={{ position: 'relative', zIndex: 1, width: '400px', height: '400px', objectFit: 'contain' }}
+                style={{ position: 'relative', zIndex: 1, width: '300px', height: '300px', objectFit: 'contain' }}
                 src={selectedPokemon.sprites.other['official-artwork'].front_default || selectedPokemon.sprites.front_default}
                 alt={selectedPokemon.name}
               />

@@ -19,12 +19,8 @@ const HomePage = () => {
     if (observer.current) {
       observer.current.disconnect()
     }
-    observer.current = new IntersectionObserver(entries => {
-      console.log(entries[0].intersectionRatio);
-      
-      if (entries[0].isIntersecting) {
-        console.log('masuk sini');
-        
+    observer.current = new IntersectionObserver(entries => {      
+      if (entries[0].isIntersecting) {        
         setOffset(prevOffset => prevOffset + 20)
       }
     })
@@ -41,7 +37,8 @@ const HomePage = () => {
       <div style={{
         display: 'flex',
         gap: '1rem',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent: 'center'
       }}>
         {
           pokemonList.map((pokemon, index) => (

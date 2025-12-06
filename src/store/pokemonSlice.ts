@@ -90,7 +90,6 @@ const pokemonSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchPokemonList.fulfilled, (state, action) => {
-        console.log('Fetched Pokemon:', action.payload.pokemon);
         state.loading = false;
         const uniquePokemon = [...new Map(
           [...state.pokemonList, ...action.payload.pokemon].map(item => [item.id, item])

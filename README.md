@@ -7,7 +7,6 @@ A modern, responsive Pokédex application built with React, TypeScript, Tailwind
 - 🎮 Browse Pokémon with infinite scrolling
 - 🔍 Search Pokémon by name or ID
 - 📱 Fully responsive design
-- 🎨 Beautiful UI with Tailwind CSS
 - ⚡ Fast performance with Vite
 - 📊 View detailed Pokémon stats, abilities, types, height, and weight
 - 🔄 Redux state management
@@ -15,10 +14,9 @@ A modern, responsive Pokédex application built with React, TypeScript, Tailwind
 
 ## Tech Stack
 
-- **React 18** - UI library
+- **React 19** - UI library
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
-- **Redux Toolkit** - State management
 - **Tailwind CSS** - Utility-first CSS framework
 - **Axios** - HTTP client
 - **PokéAPI** - Pokémon data source
@@ -28,10 +26,12 @@ A modern, responsive Pokédex application built with React, TypeScript, Tailwind
 ```
 src/
 ├── components/
-│   ├── PokemonCard.tsx      # Pokemon card component
-│   ├── PokemonList.tsx      # Main list view with pagination
-│   ├── PokemonDetail.tsx    # Detailed modal view
-│   └── SearchBar.tsx        # Search functionality
+│   ├── LoadingScreen        # Global loading screen
+│   ├── PokemonCard          # Component for showing the card of pokemon
+│   └── SearchBar            # Search functionality
+├── pages/
+│   ├── Home                 # Home page that showing list of component
+│   ├── detail               # Detail page for showing the detail of pokemon
 ├── store/
 │   ├── store.ts             # Redux store configuration
 │   ├── pokemonSlice.ts      # Pokemon slice with async thunks
@@ -40,7 +40,7 @@ src/
 │   └── pokemon.ts           # TypeScript interfaces
 ├── App.tsx                  # Main app component
 ├── main.tsx                 # App entry point
-└── index.css                # Tailwind imports
+└── index.css                # Main global css token
 ```
 
 ## Getting Started
@@ -128,13 +128,7 @@ Base URL: `https://pokeapi.co/api/v2`
 
 ## Styling
 
-The app uses Tailwind CSS with a custom color system for Pokémon types:
-
-- Fire: Red
-- Water: Blue
-- Grass: Green
-- Electric: Yellow
-- And more...
+The app uses CSS Modules for component-specific styling, with custom color schemes for Pokémon types.
 
 ## Future Enhancements
 
@@ -156,5 +150,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Acknowledgments
 
 - [PokéAPI](https://pokeapi.co/) for providing the Pokémon data
-- [Tailwind CSS](https://tailwindcss.com/) for the styling framework
 - [Redux Toolkit](https://redux-toolkit.js.org/) for state management
