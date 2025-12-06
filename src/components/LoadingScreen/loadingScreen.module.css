@@ -1,0 +1,105 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.loading-container {
+  display: flex;
+  gap: min(20px, 4vmin);
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.pokeball {
+  width: min(60px, 12vmin);
+  height: min(60px, 12vmin);
+  position: relative;
+  border: min(3px, 0.6vmin) solid #000000;
+  border-radius: 50%;
+  animation: jump 1.4s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.pokeball:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.pokeball:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes jump {
+  0%, 60%, 100% {
+      transform: translateY(0);
+  }
+  30% {
+      transform: translateY(min(-30px, -6vmin));
+  }
+}
+
+.pokeball-top {
+  width: 100%;
+  height: 50%;
+  background: #ff0000;
+  border-radius: 100% 100% 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pokeball-top::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 15%;
+  height: 15%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.pokeball-bottom {
+  width: 100%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 0 0 100% 100%;
+  position: relative;
+}
+
+.pokeball-middle {
+  width: 100%;
+  height: 6%;
+  background: #000000;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  z-index: 2;
+}
+
+.pokeball-button {
+  width: 25%;
+  height: 25%;
+  background: #ffffff;
+  border: min(2px, 0.4vmin) solid #000000;
+  border-radius: 50%;
+  position: absolute;
+  top: 37.5%;
+  left: 37.5%;
+  z-index: 3;
+  box-shadow: inset 0 0 0 min(2px, 0.4vmin) #ffffff;
+}
+
+.pokeball-button::after {
+  content: '';
+  width: 48%;
+  height: 48%;
+  background: #e0e0e0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
